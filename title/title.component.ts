@@ -6,8 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./title.component.css']
 })
 export class TitleComponent implements OnInit {
+  loggedIn: boolean;
+  username: string;
+  nickname: string;
 
-  constructor() { }
+  constructor() { 
+    this.loggedIn = false;
+    this.username = "";
+    this.nickname = "";
+  }
+
+  sendLogin() {
+
+  }
+  checkLogin() {
+    
+  }
 
   ngOnInit(): void {
   }
