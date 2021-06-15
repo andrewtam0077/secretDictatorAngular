@@ -1,18 +1,16 @@
 <div>
-  
   <div *ngIf="displayPage == 'register'">
-    <register></register>
+    <app-login></app-login>
   </div>
   <div *ngIf="displayPage == 'title'">
-    <title></title>
+    <app-title></app-title>
   </div>
   <div *ngIf="displayPage == 'lobby'">
-    <lobby></lobby>
+    <app-lobby (redirectChange)="redirectHandler($event)"></app-lobby>
   </div>
   <div *ngIf="displayPage == 'ingame'">
-    <ingame></ingame>
+    <app-ingame></app-ingame>
   </div>
-  
-</div>
 
+</div>
 <router-outlet></router-outlet>
