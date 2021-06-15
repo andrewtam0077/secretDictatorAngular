@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, NgModule} from '@angular/core';
+
+//import { TextchatComponent } from '../textchat/textchat.component';
 
 @Component({
   selector: 'app-lobby',

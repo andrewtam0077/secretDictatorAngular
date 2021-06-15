@@ -12,7 +12,7 @@ export class AppComponent {
   displayPage : string;
 
   constructor(private http: HttpClient) { //
-    this.displayPage = "lobby";
+    this.displayPage = "ingame";
   }
 
   redirectHandler(newState: string) {
