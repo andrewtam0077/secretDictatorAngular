@@ -1,5 +1,5 @@
 <div class="fitImg" style="width: 100%; height: 100%;
-                            background-position: top 0 left 0; 
+                            background-position: top 0 left 0;
                             background-size: auto 100%; background-image: url('../../assets/images/textChat.png')">
     <h1 style="margin-left: 45%; padding-top: 3%" >Text Chat</h1>
     <div style="margin: 0 5% 5% 25%; padding-top: 5%; height: 57%; overflow-y: auto;">
@@ -7,14 +7,17 @@
             <ng-template ngSwitchCase="nickname">
                 <p style="line-height: 9px; color: var(--darkred)">You: {{ msg[1] }}</p>
             </ng-template>
+            <ng-template ngSwitchCase="Error">
+              <p style="line-height: 9px; color: var(--darkred)">{{ msg[1] }}</p>
+            </ng-template>
             <ng-template ngSwitchDefault>
                 <p style="line-height: 9px; color: black">{{ msg[0] }}: {{ msg[1] }}</p>
             </ng-template>
         </div>
     </div>
     <div style="margin: 0 5% 5% 25%;">
-        <form #textForm = "ngForm">
-            <input [(ngModel)] = "currentMsg" type="text" name="sendtext" placeholder="type here..." style="border-radius: 5px; width: 80%">
+        <form #textForm = "ngForm" (ngSubmit)="sendText();">
+            <input [(ngModel)]="currentMsg" type="text" name="sendtext" placeholder="type here..." style="border-radius: 5px; width: 80%">
             <div class="btn-group">
                 <input type="submit" class="btn btn-primary btn-block" id="submitJoin" value="send" style="width: 30%;">
             </div>

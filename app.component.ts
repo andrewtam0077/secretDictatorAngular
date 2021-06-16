@@ -12,22 +12,18 @@ export class AppComponent {
   displayPage : string;
 
   constructor(private http: HttpClient) { //
-    this.displayPage = "ingame";
+    this.displayPage = "lobby";
   }
 
   redirectHandler(newState: string) {
     switch(newState) {
       case "login": this.toLogin(); break;
-      case "title": this.toTitle(); break;
       case "lobby": this.toLobby(); break;
       case "ingame": this.toGame(); break;
     }
   }
   toLogin() : void {
     this.displayPage = "login";
-  }
-  toTitle() : void {
-    this.displayPage = "title";
   }
   toLobby() : void {
     this.displayPage = "lobby";

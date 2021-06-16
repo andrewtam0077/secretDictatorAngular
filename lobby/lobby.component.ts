@@ -14,7 +14,7 @@ export class LobbyComponent implements OnInit {
 
   @Output() redirectChange: EventEmitter<string> =   new EventEmitter();
 
-  constructor() { 
+  constructor() {
     this.players = new Array(10).fill('');
     this.leftPlayers = new Array(5).fill('');
     this.rightPlayers = new Array(5).fill('');
@@ -31,7 +31,7 @@ export class LobbyComponent implements OnInit {
 
   toTitle(): void {
     if(confirm("Are you sure you want to leave?") == true) {
-      this.redirectChange.emit("title");
+      location.href = "index.php";
     }
   }
   toGame(): void {

@@ -11,7 +11,7 @@
 </style>
 <div class="bg">
     <!-- Header Information -->
-    <div class="row" style="margin: 0; padding: 0;"> 
+    <div class="row" style="margin: 0; padding: 0;">
         <div class="col-md-2 col-lg-2 col-sm-2" style="margin: 1rem 0 1rem 0;">
             <a href="index.html">
                 <img class="img-fluid" src="../../assets/images/sd_big1.png" style="width:100%;">
@@ -27,7 +27,7 @@
         </div>
         <!-- Leave Game Button -->
         <div class="col-md-3 col-lg-3 col-sm-3" style="right: 0;">
-            <button class="btn btn-default d-flex" style="right: 0;" onclick=" goHome() ">
+            <button class="btn btn-default d-flex" style="right: 0;" (click)="toTitle()">
                 <img id="hostGame" class="imgfit" src="../../assets/images/leaveGame.png" style="width:90%; height:90%;">
             </button>
         </div>
@@ -45,11 +45,11 @@
                             </div>
                         </td>
                     </tr>
-                </thead>                    
+                </thead>
             </table>
             <table id="playertable2" style="width: 50%;">
                 <thead>
-                </thead>                    
+                </thead>
             </table>
         </div>
         <!-- Game Boards -->
