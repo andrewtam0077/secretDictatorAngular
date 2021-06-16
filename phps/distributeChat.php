@@ -1,5 +1,5 @@
 <?php 
-//SHOULD BE IN HTDOCS 
+//SHOULD BE IN HTDOCS
 //on XAMPP
 // header('Access-Control-Allow-Origin: http://localhost:4200');
 header('Access-Control-Allow-Origin: *');
@@ -8,14 +8,25 @@ header('Access-Control-Max-Age: 1000');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
 //credentials and such go above
 
-//retrieve data from a get request
-if(!isset($chatLog)) {
-    $chatLog = array();
+if(!isset($_COOKIE['chatlog'])) {
+  $_COOKIE['chatlog'] = json_encode(array(array("welcome!", "enjoy")));
 }
-if($_GET['newMsg']) {
-    $userAndMessage = json_decode($_GET['newMsg'];);
-    array_push($chatLog, $userAndMessage);
 
-    echo json_encode($chatLog);
-}
+//Get request
+$getdata = $_GET['newMsg'];
+
+//decode information
+$newMsg = json_decode($getdata);
+$nickname = $newMsg[0];
+$msg = $newMsg[1];
+  
+//Get cookie array
+$chatlog = json_decode($_COOKIE['chatlog']);
+//add to array
+array_push($chatlog, array($nickname, $msg));
+//update cookie 
+setcookie('chatlog', json_encode($chatlog), time()+3600);
+
+//return information
+echo json_encode($chatlog);
 ?>
